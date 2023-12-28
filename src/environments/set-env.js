@@ -17,7 +17,7 @@ const setEnv = () => {
 };
 `;
   console.log('The file `environment.ts` will be written with the following content: \n');
-  writeFile(targetPath, envConfigFile, (err: undefined | never) => {
+  writeFile(targetPath, envConfigFile, (err) => {
     if (err) {
       console.error(err);
       throw err;
