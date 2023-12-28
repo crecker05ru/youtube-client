@@ -1,0 +1,133 @@
+.detailed-information {
+  &__inner {
+    position: relative;
+    display: flex;
+    margin-top: 44px;
+    // max-width: calc(729px + 436px);
+    min-height: 461px;
+    max-height: calc(100vh - 200px);
+    box-shadow: 5px 5px 20px 0px rgba(51, 51, 51, 0.25);
+  }
+  &__button-back{
+    position: absolute;
+    top: 0;
+    left: -32px;
+    width: 32px;
+    height: 32px;
+    filter: drop-shadow(-2px 2px 4px rgba(47, 128, 237, 0.25));
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    border: none;
+    background-color: #2F80ED;
+    & .mat-icon {
+      margin-left: -2px;
+      color: #fff;
+      text-align: left;
+    }
+  }
+  &__favorite-icon {
+    margin-top: auto;
+  }
+  &__icon-active {
+    & .mat-icon {
+      color: #ff0000 !important;
+    }
+  }
+  &__image-column {
+    // max-width: 729px;
+    flex: 1 1 60%;
+  }
+  &__img {
+    display: block;
+    width: 100%;
+    // height: auto;
+    min-height: 461px;
+    max-height: calc(100vh - 200px);
+    border-bottom-left-radius: 5px;
+  }
+}
+.details-column {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 40%;
+  padding: 35px 35px 24px;
+  max-width: 436px;
+  background-color: #E5E5E5;
+  border-radius: 0px 5px 5px 0px;
+  &__header {
+    display: flex;
+  }
+  &__title {
+    max-width: 250px;
+    color: #000;
+    font-family: 'Roboto';
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  &__date {
+    // width: 200px;
+    color: #828282;
+    text-align: right;
+    font-family: 'Roboto';
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  &__description-label {
+    color: #000;
+    font-family: 'Roboto';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  &__description-text {
+    max-height: 250px;
+    overflow-y: auto;
+    color: #828282;
+    font-family: 'Roboto';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  &__info-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__footer {
+    align-self: center;
+    margin-top: auto;
+    width: 202px;
+  }
+  &__bottom-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    border-bottom-right-radius: 5px;
+  }
+}
+.item-info {
+  &__row {
+    display: flex;
+    align-items: center;
+  }
+  &__icon {
+    font-size: 18px;
+  }
+  &__value {
+    color: #000;
+    font-family: 'Roboto';
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}

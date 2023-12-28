@@ -1,0 +1,86 @@
+<header class="header">
+  <div class="header__inner wrapper">
+    <a class="header__logo-link" [routerLink]="['/']"
+      ><div class="header__logo"></div
+    ></a>
+    <div class="header__search">
+      <input
+        class="header__search-input"
+        placeholder="What are you want to find out?"
+        #searchInput
+        id="search-input"
+        (input)="search(searchInput.value)"
+      />
+    </div>
+    <button
+      (click)="handleTuneCLick()"
+      mat-raised-button
+      color="primary"
+      class="header__button-filter material-button__square-icon"
+    >
+      <mat-icon>tune</mat-icon>
+    </button>
+    <div class="header__account">
+      <span class="header__user-name">{{loginService.userInfo.login || 'Your name'}}</span>
+      <button
+      *ngIf="!loginService.isLoggedIn"
+        color="primary"
+        (click)="router.navigate(['/login'])"
+        mat-raised-button
+        color="primary"
+        class="header__button material-button__square-icon"
+      >
+        <mat-icon
+          ><span class="material-symbols-outlined">
+            account_circle
+          </span></mat-icon
+        >
+      </button>
+
+      <button
+      *ngIf="loginService.isLoggedIn"
+        color="primary"
+        (click)="router.navigate(['/login'])"
+        mat-raised-button
+        color="primary"
+        class="header__button material-button__square-icon"
+      >
+        <mat-icon
+          ><span class="material-symbols-outlined"> person_off </span></mat-icon
+        >
+      </button>
+      <button
+      *ngIf="loginService.isLoggedIn"
+        color="primary"
+        (click)="router.navigate(['/admin'])"
+        mat-raised-button
+        color="primary"
+        class="header__button material-button__square-icon"
+      >
+        <mat-icon
+          ><span class="material-symbols-outlined">
+            admin_panel_settings
+            </span></mat-icon
+        >
+      </button>
+      <button
+      *ngIf="loginService.isLoggedIn"
+        color="primary"
+        (click)="router.navigate(['/favorite'])"
+        mat-raised-button
+        color="primary"
+        class="header__button material-button__square-icon"
+      >
+        <mat-icon
+          ><span class="material-symbols-outlined">
+            favorite
+            </span></mat-icon
+        >
+      </button>
+      <div></div>
+    </div>
+  </div>
+  <div class="wrapper">
+    <app-filter class="header__filter"></app-filter>
+  </div>
+</header>

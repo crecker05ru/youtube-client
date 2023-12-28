@@ -1,0 +1,34 @@
+<section class="detailed-information  wrapper">
+<div class="detailed-information__inner" *ngIf="item">
+  <button class="detailed-information__button-back" (click)="backClick()"><mat-icon>chevron_left</mat-icon></button>
+  <div class="detailed-information__image-column">
+    <img class="detailed-information__img" [src]="item.snippet.thumbnails.standard.url" alt="Youtube image" />
+  </div>
+  <div class="detailed-information__details-column details-column">
+    <div class="details-column__header">
+      <h1 class="details-column__title">{{item.snippet.title}}</h1>
+      <div class="details-column__date">{{item.snippet.publishedAt | date: 'fullDate'}}</div>
+      <div
+      class="detailed-information__favorite-icon material-button__square-icon" [class]="{'detailed-information__icon-active': isFavorite}"
+    >
+      <mat-icon
+        >favorite</mat-icon
+      >
+  </div>
+    </div>
+    <div class="details-column__description">
+      <p class="details-column__description-label">Description</p>
+      <p class="details-column__description-text">{{item.snippet.description}}</p>
+    </div>
+    <div class="details-column__footer">
+      <div class="details-column__info-row">
+        <div class="details-colum__views item-info__row"><mat-icon class="item-info__icon">visibility</mat-icon><span class="item-info__value">{{item.statistics.viewCount}}</span></div>
+        <div class="details-colum__likes item-info__row"><mat-icon class="item-info__icon">favorite</mat-icon><span class="item-info__value">{{item.statistics.likeCount}}</span></div>
+        <div class="details-colum__dislikes item-info__row"><mat-icon class="item-info__icon">heart_broken</mat-icon><span class="item-info__value">{{item.statistics.dislikeCount}}</span></div>
+        <div class="details-colum__comments item-info__row"><mat-icon class="item-info__icon">chat</mat-icon><span class="item-info__value">{{item.statistics.commentCount}}</span></div>
+      </div>
+    </div>
+    <div class="details-column__bottom-line" appColorDate [itemDate]="item.snippet.publishedAt"></div>
+  </div>
+</div>
+</section>

@@ -1,0 +1,7 @@
+<div class="filter" *ngIf="isShowFilter">
+  <span class="filter__title">Sorting by</span>
+  <span class="filter__filter-by" (click)="sortBy('publishedAt')">date</span>
+  <span class="filter__filter-by" (click)="sortBy('viewCount')">count of views</span>
+  <span class="filter__filter-by" (click)="filterByKeywords()">by word or sentance</span>
+  <input [value]="keywords" (input)="handleInput($event)"/>
+</div>

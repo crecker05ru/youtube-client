@@ -1,0 +1,20 @@
+.not-found {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:calc(100% - 80px);
+  &__inner {
+    display: flex;
+    align-items: center;
+  }
+  &__text {
+    width: 233px;
+    margin-left: 27px;
+    color: #828282;
+    font-family: Roboto;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+}

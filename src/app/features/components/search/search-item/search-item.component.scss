@@ -1,0 +1,107 @@
+.search-item {
+  position: relative;
+  width: 263px;
+  height: 327px;
+  padding: 20px 20px 15px;
+  background-color: #E5E5E5;
+  border-radius: 5px;
+  &__bottom-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  &__image {
+    max-width: 100%;
+    height: auto;
+  }
+  &__info-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__title {
+    display: -webkit-box;
+    color: #4F4F4F;
+    text-align: right;
+    font-family: 'Roboto';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    // white-space: nowrap;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    // @supports (-webkit-line-clamp: 2) {
+    //   display: -webkit-box;
+    //   // -webkit-line-clamp: 2;
+    //   // -webkit-box-orient: vertical;
+    // }
+  }
+  &__buttons-row {
+    display: flex;
+  }
+  &__button {
+    width: 120px;
+    height: 32px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    align-self: flex-end;
+  }
+  &__icon {
+    cursor: pointer;
+  }
+  &__icon-active {
+    & .mat-icon {
+      color: #ff0000 !important;
+    }
+  }
+}
+.item-info {
+  &__row {
+    display: flex;
+    align-items: center;
+  }
+  &__icon {
+    // width: 20px;
+    // height: 13px;
+    font-size: 18px;
+  }
+  &__value {
+    color: #000;
+    font-family: 'Roboto';
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
+
+.material-button {
+  &__square-icon {
+    display: block;
+    max-width: 24px;
+    height: 24px;
+    // padding-right: 4px;
+    // padding-left: 4px;
+    margin-left: auto;
+    margin-right: auto;
+    // background-color: #fff !important;
+    &>.mat-icon {
+      margin-left: 0px !important;
+      margin-right: 0px !important;
+    }
+  }
+}

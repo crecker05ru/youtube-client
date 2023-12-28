@@ -1,0 +1,14 @@
+<article class="custom-card" *ngIf="card && card.id">
+  <div class="custom-card__inner">
+    <img [src]="card.imageLink" alt="" class="custom-card__image">
+    <h2 class="custom-card__title">{{card.title}}</h2>
+    <p>{{card.description}}</p>
+    <a [href]="card.videoLink">Video link</a>
+    <ul *ngIf="card.tags">
+      <li *ngFor="let tag of card.tags">{{tag}}</li>
+    </ul>
+    <app-button class="custom-card__button" (click)="router.navigate(['detailed-information/', card.id])">more...</app-button>
+    <app-button class="custom-card__button-delete" (click)="delete.emit(card.id)">delete</app-button>
+    <div class="custom-card__bottom-line" appColorDate [itemDate]="card.creationDate"></div>
+  </div>
+</article>

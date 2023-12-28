@@ -1,0 +1,25 @@
+<article class="search-item" *ngIf="item && item.id">
+  <div class="search-item__inner">
+    <img [src]="item.snippet.thumbnails.default.url" alt="" class="search-item__image">
+    <div class="search-item__info-row">
+      <div class="item-info__views item-info__row"><mat-icon class="item-info__icon">visibility</mat-icon><span class="item-info__value value__viewCount">{{item.statistics.viewCount}}</span></div>
+      <div class="item-info__likes item-info__row"><mat-icon class="item-info__icon">favorite</mat-icon><span class="item-info__value value__likeCount">{{item.statistics.likeCount}}</span></div>
+      <div class="item-info__dislikes item-info__row"><mat-icon class="item-info__icon">heart_broken</mat-icon><span class="item-info__value value__dislikeCount">{{item.statistics.dislikeCount}}</span></div>
+      <div class="item-info__comments item-info__row"><mat-icon class="item-info__icon">chat</mat-icon><span class="item-info__value value__commentCount">{{item.statistics.commentCount}}</span></div>
+    </div>
+    <h2 class="search-item__title">{{item.snippet.title}}</h2>
+    <!-- <button class="search-item__button-icon material-button__square-icon" (click)="add.emit(item)"><mat-icon class="material-symbols-outlined">favorite</mat-icon><span class="item-info__value">Add</span></button> -->
+
+    <div class="search-item__buttons-row" (click)="favoriteClick(item)">
+      <div
+      class="search-item__icon material-button__square-icon" [class]="{'search-item__icon-active': isFavorite}"
+    >
+      <mat-icon
+        >favorite</mat-icon
+      >
+  </div>
+    <app-button class="search-item__button" (click)="router.navigate(['detailed-information/', item.id])">more...</app-button>
+    </div>
+    <div class="search-item__bottom-line" appColorDate [itemDate]="item.snippet.publishedAt"></div>
+  </div>
+</article>

@@ -1,0 +1,42 @@
+<section class="admin">
+  <div class="admin__inner">
+    <h1 class="admin__title">Create new card</h1>
+    <form class="admin__form"  [formGroup]="newCardForm">
+    <label class="admin__label">Title
+      <div class="admin__validation-message" *ngIf="newCardForm.controls['title'].errors?.['required'] && newCardForm.controls['title'].touched">Please enter a title</div>
+      <div class="admin__validation-message" *ngIf="newCardForm.controls['title'].errors?.['minlsength'] && newCardForm.controls['title'].touched">The title is too short</div>
+      <div class="admin__validation-message" *ngIf="newCardForm.controls['title'].errors?.['maxlength'] && newCardForm.controls['title'].touched">The title is too long</div>
+      <input class="admin__input" formControlName="title"/>
+    </label>
+      <label class="admin__label">Description
+        <div class="admin__validation-message" *ngIf="newCardForm.controls['description'].errors?.['maxlength'] && newCardForm.controls['description'].touched">The description is too long</div>
+        <input class="admin__input" formControlName="description"/>
+      </label>
+      <label class="admin__label">Img
+        <div class="admin__validation-message" *ngIf="newCardForm.controls['img'].errors?.['required'] && newCardForm.controls['img'].touched">Please enter a link to the image</div>
+        <input class="admin__input" formControlName="img"/>
+      </label>
+      <label class="admin__label">Link video
+        <div class="admin__validation-message" *ngIf="newCardForm.controls['linkVideo'].errors?.['required'] && newCardForm.controls['linkVideo'].touched">Please enter a link to the video</div>
+        <input class="admin__input" formControlName="linkVideo"/>
+      </label>
+      <label class="admin__label">Creation date
+        <div class="admin__validation-message" *ngIf="newCardForm.controls['creationDate'].errors?.['required'] && newCardForm.controls['creationDate'].touched">Please enter a creation date</div>
+        <div class="admin__validation-message" *ngIf="newCardForm.controls['creationDate'].errors?.['futureDate'] && newCardForm.controls['creationDate'].touched">The date is invalid,this date in future</div>
+        <input class="admin__input" type="date" formControlName="creationDate"/>
+      </label>
+      <div formArrayName="tags" class="admin__tags-block">
+        <label class="admin__tag-label" *ngFor="let tag of tags.controls; let i=index">Tags
+          <div  *ngIf="tags.controls[i].errors?.['required'] && newCardForm.controls['tags'].touched">Please enter a tag</div>
+          <input class="admin__tag-input" [formControlName]="i"/>
+        </label>
+      </div>
+
+      <div class="admin__buttons-row">
+        <button class="admin__button button__reset" (click)="resetForm()">Reset</button>
+        <button class="admin__button button__add" (click)="addTag()">Add tag</button>
+        <button class="admin__button" type="submit" [disabled]="!newCardForm.valid" (click)="formSubmit()">Create card</button>
+      </div>
+    </form>
+  </div>
+</section>

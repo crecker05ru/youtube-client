@@ -1,0 +1,23 @@
+.filter {
+  display: flex;
+  gap: 12px;
+  &__title {
+    color: #929292;
+    font-family: 'Roboto';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  &__filter-by {
+    display: block;
+    cursor: pointer;
+    text-decoration: underline;
+    color: #2F80ED;
+    font-family: 'Roboto';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}

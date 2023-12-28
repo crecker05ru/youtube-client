@@ -1,0 +1,5 @@
+<ul class="search-list wrapper" *ngIf="searchItems$">
+  <li *ngFor="let item of (searchItems$ | async)?.searchItems" class="search-list__item">
+    <app-search-item [item]="item" [ids]="(searchItems$ | async)?.favoritesIds" (favoriteButtonClick)="onFavoriteButtonClick($event)"></app-search-item>
+  </li>
+</ul>

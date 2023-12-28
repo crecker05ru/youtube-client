@@ -1,0 +1,29 @@
+<section class="login">
+  <div class="login__inner">
+    <div *ngIf="!isLogged">    <h1 class="login__title">Login</h1>
+      <form class="login__form"  (submit)="formSubmit()" [formGroup]="loginForm">
+      <label class="login__label">login 
+        <div class="login__validation-message" *ngIf="loginForm.controls['login'].errors?.['required'] && loginForm.controls['login'].touched">Please enter a login email</div>
+        <div class="login__validation-message" *ngIf="loginForm.controls['login'].invalid && loginForm.controls['login'].touched">The login email is invalid</div>
+        <input class="login__input" formControlName="login"/>
+      </label>
+        
+        <label class="login__label">password
+          <div class="login__validation-message" *ngIf="loginForm.controls['password'].errors?.['required'] && loginForm.controls['password'].touched">Please enter a password</div>
+          <div class="login__validation-message" *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].touched">Your password isn't strong enough:</div>
+          <div class="login__validation-message" *ngIf="loginForm.controls['password'].errors?.['matchLength'] && loginForm.controls['password'].touched">at least 8 characters</div>
+          <div class="login__validation-message" *ngIf="loginForm.controls['password'].errors?.['matchUpper'] && loginForm.controls['password'].touched">at least 1 uppercase letter</div>
+          <div class="login__validation-message" *ngIf="loginForm.controls['password'].errors?.['matchLower'] && loginForm.controls['password'].touched">at least 1 lowercase letter</div>
+          <div class="login__validation-message" *ngIf="loginForm.controls['password'].errors?.['matchDigits'] && loginForm.controls['password'].touched">at least 1 digit</div>
+          <div class="login__validation-message" *ngIf="loginForm.controls['password'].errors?.['matchSpecials'] && loginForm.controls['password'].touched">inclusion of at least one special character, e.g., ! # ? ]</div>
+          <input class="login__input" formControlName="password"/>
+        </label>
+  
+        <button class="login__button" type="submit" [disabled]="!loginForm.valid">Login</button>
+      </form></div>
+
+    <div *ngIf="isLogged" class="logout">
+      <button class="logout__button" (click)="logout()">Logout</button>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,113 @@
+.admin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100% - 80px);
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 20px;
+    width: 350px;
+    background: #f2f2f2;
+    border-radius: 5px;
+  }
+  &__title {
+    color: #000;
+    font-family: "Roboto";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  &__form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 11px;
+    height: 440px;
+    overflow-y: auto;
+  }
+  &__tags-block {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+
+  }
+  &__label {
+    margin-bottom: 4px;
+    color: #828282;
+    font-family: "Roboto";
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  &__tag-label {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    margin-bottom: 4px;
+    color: #828282;
+    font-family: "Roboto";
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    // flex: 1 1 50%;
+    // height: 100px;
+  }
+  &__input {
+    margin-bottom: 5px;
+    margin-top: 5px;
+    width: 100%;
+    height: 37px;
+    background: #e0e0e0;
+    border: none;
+    border: 1px solid transparent;
+  }
+  &__tag-input {
+    margin-bottom: 5px;
+    margin-top: 5px;
+    height: 24px;
+    background: #e0e0e0;
+    border: none;
+    border: 1px solid transparent;
+  }
+  &__buttons-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 22px;
+
+  }
+  &__button {
+    // margin-left: auto;
+    width: 124px;
+    height: 30px;
+    color: #fff;
+    background-color: #85b9ff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+}
+
+button[disabled] {
+  cursor: default;
+  opacity: 0.5;
+}
+.button {
+  &__reset {
+    width: 70px;
+    background-color: rgb(250, 102, 10)
+  }
+  &__add {
+    width: 70px;
+    background-color: rgb(154, 10, 250)
+  }
+}
+input,
+.ng-invalid {
+  border-color: #ff0000;
+}

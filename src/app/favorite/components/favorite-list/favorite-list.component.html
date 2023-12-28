@@ -1,0 +1,5 @@
+<ul class="favorite-list wrapper" *ngIf="searchItems$">
+  <li *ngFor="let favorites of (searchItems$ | async)?.favorites" class="favorite-list__item">
+    <app-search-item [item]="favorites" [ids]="(searchItems$ | async)?.favoritesIds"></app-search-item>
+  </li>
+</ul>

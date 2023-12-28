@@ -1,0 +1,8 @@
+<div class="video-list">
+  <h1>Video list</h1>
+  <div class="custom-cards wrapper"  >
+    <app-custom-card *ngFor="let card of (customCards$ | async)" [card]="card" (delete)="onDelete($event)"></app-custom-card>
+  </div>
+  <app-search-result></app-search-result>
+</div>
+
