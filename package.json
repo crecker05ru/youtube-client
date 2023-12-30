@@ -4,11 +4,12 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "npm run config && ng build",
+    "build": "npm run config && ng build --output-path deploy --base-href /youtube-client/",
     "prod": "ng build",
     "watch": "ng build --watch --configuration development",
     "build:prod": "npm run config && ng build",
     "config": "node src/environments/set-env.js",
+    "based":"ng build --output-path deploy --base-href /youtube-client/",
     "test": "jest",
     "test-coverage": "jest --coverage",
     "lint": "ng lint",
