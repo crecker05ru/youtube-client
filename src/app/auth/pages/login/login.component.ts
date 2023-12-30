@@ -41,7 +41,7 @@ export class LoginComponent {
           // eslint-disable-next-line no-alert
           alert('Successfull loged in');
           setTimeout(() => {
-            this.router.navigateByUrl('/');
+            this.router.navigate(['/'], { relativeTo: this.activatedRoute });
           }, 1200);
         }
       });
